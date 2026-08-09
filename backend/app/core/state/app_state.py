@@ -17,4 +17,3 @@ class AppState:
 
 
 app_state = AppState()
-print("AppState initialized:", app_state)
