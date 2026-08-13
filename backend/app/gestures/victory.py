@@ -6,15 +6,17 @@ from app.gestures.finger_utils import (
 )
 
 
-def is_index_pointing(landmarks):
+def is_victory(landmarks):
     """
-    Returns True when the index finger is extended
-    and the other four fingers are folded.
+    Detect a Victory / V sign.
+
+    Index and middle fingers must be extended.
+    Ring and pinky fingers must be folded.
     """
 
     return (
         is_index_extended(landmarks)
-        and not is_middle_extended(landmarks)
+        and is_middle_extended(landmarks)
         and not is_ring_extended(landmarks)
         and not is_pinky_extended(landmarks)
     )
